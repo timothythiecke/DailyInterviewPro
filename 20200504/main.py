@@ -1,11 +1,23 @@
 def sortNums(nums):
     # Fill this in.
-    #ones = 0
-    #twos = 0
-    #threes = 0
-    #for num in nums:
+    # Init amounts
+    amounts = [0] * 3
+    for num in nums:
+        amounts[num - 1] += 1
 
+    # Then loop over the nums list
+    i = 0
+    j = 0
+    while i < len(nums):
+        nums[i] = j + 1
 
+        amounts[j] -= 1
+
+        if amounts[j] < 1:
+            j += 1
+
+        i += 1
+    
     return nums
 
 print(sortNums([3, 3, 2, 1, 3, 2, 1]))
