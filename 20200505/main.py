@@ -13,7 +13,7 @@ def two_sum(l, k):
 
     return False
 
-print(two_sum([4, 7, 1, -3, 2], 5))
+print(two_sum([4, 7, 1, -3, 1], -3))
 # True
 
 '''
