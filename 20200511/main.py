@@ -1,14 +1,47 @@
 #You are given a positive integer N which represents the number of steps in a staircase. You can either climb 1 or 2 steps at a time. Write a function that returns the number of unique ways to climb the stairs.
 
-def staircase(n):
-  # Fill this in.
+# Recursive: fn(n - 1)  + fn(n - 2)
+# Stop condition: return 1 if n <= 1
+def fibonacciRec(n):
+    if n <= 1:
+        return 1
 
-  
+    return fibonacciRec(n - 1) + fibonacciRec (n - 2)
+
+
+# Iterative
+def fibonacciIt(n):
+    i = 1
+    
+    preprevious = 1
+    previous = 2
+    
+    result = 1
+    while i < n:
+        if i >= 2:
+            result = preprevious + previous
+            preprevious = previous
+            previous = result 
+
+        i += 1
+
+    return result
+
+
+def staircase(n):
+    # Fill this in.
+    #return fibonacciRec(n)
+    return fibonacciIt(n)
   
 print(staircase(4))
 # 5
 print(staircase(5))
 # 8
+
+print(staircase(7))
+# 21
+print(staircase(10))
+# 89
 
 #Can you find a solution in O(n) time?
 
